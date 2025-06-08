@@ -1,0 +1,194 @@
+WORKING OF THE .NET FRAMEWORK AND BEHIND THE SCENES CONCEPT
+---
+
+What is .NET?
+-> .NET is an application development platform used to build desktop, web, and mobile applications.
+
+1. Desktop Application
+   -> Also called Stand-alone Applications.
+   -> It must be installed on every system to use.
+
+2. Web Application
+   -> Applications that are hosted on a server and accessed via a browser.
+
+3. Mobile Application
+   -> Applications developed for Android or iOS devices.
+
+---
+
+Note:
+-> .NET Framework supports more than 30 languages like C#, VB, VB++, etc.
+-> .NET has two main modules:
+
+a. ASP.NET:  
+-> Used to build Websites, Web Applications, and Web Services.  
+-> Example: E-commerce sites.  
+
+b. C#.NET:  
+-> Used to build Windows GUI Applications, Console Applications, and Windows Services.  
+-> Example: MS Word.  
+
+-> C# is built based on CLS (Common Language Specification), which is a set of rules that all .NET languages must follow.
+
+---
+
+What is .NET Framework
+-> .NET Framework is a software platform to build desktop, web, and mobile applications.
+-> It includes .NET Core.
+-> .NET Framework consists of:
+
+1. CLR (Common Language Runtime)
+2. FCL (Framework Class Library) - contains predefined classes, interfaces, etc.
+   -> It supports only Windows. To support other platforms, .NET Core was introduced in 2016.
+
+---
+
+Why use .NET Framework
+-> Provides a secure execution environment.
+-> Supports a wide variety of applications and languages.
+-> Promotes code reusability.
+
+---
+
+CLI (Common Language Infrastructure
+
+Step 1: Application Source Code
+-> Written by developers using C#.NET or VB.NET (high-level languages).
+
+Step 2: Compilation using CSC (C Sharp Compiler
+-> Converts source code into:
+
+1. IL (Intermediate Language):
+   -> Language-neutral and not directly executable.
+   -> Makes code independent of the source language.
+
+2. CLR (Common Language Runtime):
+   -> Converts IL to native machine code.
+   -> Manages class loading, memory, garbage collection, etc.
+
+Step 3: Execution
+-> Native machine code is executed by the Operating System to produce output.
+
+Summary of the Process
+
+1. Developer writes source code in C#, VB, etc.
+2. It is compiled into IL.
+3. CLR converts IL to native machine code.
+4. OS executes the machine code to produce output.
+
+---
+
+CLR (Common Language Runtime
+-> The execution engine for all .NET applications.
+-> Common for Desktop, Web, and Mobile apps.
+-> Part of the .NET Framework (pre-installed in Windows).
+-> Includes:
+
+a. Class Loader
+-> Loads class information into memory before execution.
+-> Cannot create, delete, or update memory.
+
+b. Memory Manager
+-> Allocates memory for objects and local variables.
+-> Local variables are stored in the **stack**, objects in the **heap**.
+-> Only allocates memory, does not delete it.
+
+c. Garbage Collector
+-> Frees memory after execution.
+-> Removes unreferenced objects.
+
+d. JIT (Just-In-Time) Compiler
+-> Converts IL into native machine code.
+
+e. Exception Manager
+-> Catches exceptions and executes the catch block.
+
+f. Thread Manager
+-> Starts with a main thread.
+-> Developers can create sub-threads for background processing.
+
+---
+
+INTRODUCTION TO C# CONCEPTS
+
+---
+
+What is C# ?
+-> It is a general purpose programming language developed by Microsoft in 2002.
+-> It is a part of .NET
+-> It is mainly used for development of Console Apps, Windows GUI and Windows Services.
+-> With the combination of ASP.NET it can be used for development of Web Apps.
+-> With the combination of Xamarin it can be used for development of Mobile Apps.
+
+Features of C#
+-> It is Object Oriented Programming (OOP) Language.
+-> It is case sensitive.
+-> It is strongly typed, once the variable type is declared other type of value cannot be stored.
+-> Compiled based language.
+
+---
+
+Understanding Objects
+1. What is Object ?
+-> Object is a small unit (entity) in the program that represents a real-world person or thing.
+-> Example: Human exist in the real world then we are Objects.
+-> Any physical thing can be called as Object.
+-> Object is the instance(example) of the Class.
+
+2. What is Class ?
+-> Class is a model of Object.
+-> It means that it tells the object that what can that object hold which is nothing but giving the blueprint for the object that will be created from this Class.
+-> Class is not the collection of Objects.
+
+3. What is Method ?
+-> Method is the collection of statements to perform a specific task.
+-> Method should be the member (part) of the class.
+-> If the method is outside of the class then that method is not considered as method of that class.
+
+---
+
+Understanding Namespace
+-> Namespace is the collection of the classes.
+-> The goal of the namespace is to group up the classes.
+-> We can also access the class name by using the namespace like:
+	namespace.class
+
+---
+
+Understanding Tokens
+-> It has mainly 4 types of tokens:
+1. Keywords
+-> These are the predefined words which has some predefined meaning.
+-> All the keywords are in small letters.
+
+2. Operators
+-> Symbols available to perform some operations.
+
+3. Literals
+-> These are the fixed values which can be number, character, string etc
+-> In simple words the value that is assigned for the variables can be also called as literals.
+
+4. Identifiers
+-> All types of names that is given by the developer is called as Identifiers.
+-> Example: Variable Name, Class Name, Method Name etc
+
+---
+
+Understanding Naming Convention
+1. Camel Case:
+-> For all local variables and parameters
+-> Ex: customerName
+
+2. Pascal Case:
+-> For all class name, namespace name etc
+-> Ex: CustomerName
+
+3. IPascal Case:
+-> For all interface names
+-> Ex: ICustomerName
+
+4. _Camel Case:
+-> For all private fields.
+-> Ex: _customerName
+
+---

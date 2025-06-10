@@ -49,26 +49,69 @@ namespace AssignmentsSection2
             // Total number of seconds to convert
             int totalSeconds = 288970;
 
-            // Step 1: Calculate number of full days
+            // Calculate number of full days
             // 1 day = 86400 seconds
             int days = totalSeconds / 86400;
 
-            // Step 2: Calculate remaining hours after removing full days
+            // Calculate remaining hours after removing full days
             // First, get the leftover seconds after days using modulus (%)
             // Then divide by 3600 (1 hour = 3600 seconds)
             int hours = (totalSeconds % 86400) / 3600;
 
-            // Step 3: Calculate remaining minutes after removing full hours
+            // Calculate remaining minutes after removing full hours
             // Use modulus with 3600 to get leftover seconds after full hours
             // Then divide by 60 (1 minute = 60 seconds)
             int minutes = (totalSeconds % 3600) / 60;
 
-            // Step 4: Calculate remaining seconds after full minutes
+            // Calculate remaining seconds after full minutes
             // Use modulus with 60 to get leftover seconds
             int seconds = totalSeconds % 60;
 
             // Final Output
             Console.WriteLine($"{days} days, {hours} hours, {minutes} minutes, {seconds} seconds");
+
+            Console.WriteLine();
+
+            // 5. Height Cheker
+            Console.WriteLine("Height Checker");
+            double heightInInch = 75;
+            double centimeters = heightInInch * 2.54;
+
+            if (centimeters < 150)
+            {
+                Console.WriteLine("Dwarft");
+            }
+            else if (centimeters >= 150 && centimeters < 165)
+            {
+                Console.WriteLine("Average Height");
+            }
+            else if (centimeters >= 165 && centimeters < 195)
+            {
+                Console.WriteLine("Tall");
+            }
+            else
+            {
+                Console.WriteLine("Abnormal Height");
+            }
+
+            Console.WriteLine();
+
+            // 6. Largest of Three Numbers
+            Console.WriteLine("Largest of Three Numbers");
+            int num1 = 60, num2 = 45, num3 = 123;
+
+            if(num1 > num2 && num1 > num3)
+            {
+                Console.WriteLine(num1);
+            }
+            else if(num2 > num3)
+            {
+                Console.WriteLine(num2);
+            }
+            else
+            {
+                Console.WriteLine(num3);
+            }
 
             Console.ReadKey();
         }

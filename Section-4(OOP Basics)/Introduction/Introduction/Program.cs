@@ -30,6 +30,28 @@ namespace Introduction
                 -> The class declares the fields that every object of that class will have and it will define the method that can be used by the object to perform some operations.
                 -> Default Access Modifier for all the classes are internal.
             */
+
+            // Example of Object
+            Car myCar = new Car();
+            myCar.Make = "Toyota";
+            myCar.Model = "Corolla";
+            myCar.Year = 2020;
+            myCar.Start(); // Output: Toyota Corolla is starting.
+        }
+    }
+
+    // Example of Class and Object
+    public class Car
+    {
+        // Fields (Properties)
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+
+        // Method (Behavior)
+        public void Start()
+        {
+            Console.WriteLine($"{Make} {Model} is starting.");
         }
     }
 }

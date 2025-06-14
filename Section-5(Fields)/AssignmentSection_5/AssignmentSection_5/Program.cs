@@ -6,32 +6,42 @@ namespace AssignmentSection_5
     {
         static void Main(string[] args)
         {
-            Employee employee1 = new Employee();
-            employee1.employeeId = 101;
-            employee1.employeeName = "John Doe";
-            employee1.employeeDesignation = "Software Engineer";
-            employee1.employeeSalary = 60000;
+            Employee.organizationName = "Harsha Inc.";
 
-            employee1.showEmployeeDetails();
-            Console.WriteLine();
+            while (true)
+            {
+                Console.Write("Enter the Employee Id: ");
+                int employeeId = int.Parse(Console.ReadLine());
 
-            Employee employee2 = new Employee();
-            employee2.employeeId = 102;
-            employee2.employeeName = "Jane Smith";
-            employee2.employeeDesignation = "Project Manager";
-            employee2.employeeSalary = 80000;
+                Console.Write("Enter the Employee Name: ");
+                string employeeName = Console.ReadLine();
 
-            employee2.showEmployeeDetails();
-            Console.WriteLine();
+                Console.Write("Enter the Salary Per Hour: ");
+                double salaryPerHour = double.Parse(Console.ReadLine());
 
-            Employee employee3 = new Employee();
-            employee3.employeeId = 103;
-            employee3.employeeName = "Alice Johnson";
-            employee3.employeeDesignation = "Data Analyst";
-            employee3.employeeSalary = 70000;
+                Console.Write("Enter the number of working days: ");
+                int numberOfWorkingHours = int.Parse(Console.ReadLine());
 
-            employee3.showEmployeeDetails();
-            Console.WriteLine();
+                // Creating Object Employee-1:
+                Employee e1 = new Employee();
+                e1.employeeId = employeeId;
+                e1.employeeName = employeeName;
+                e1.salaryPerHour = salaryPerHour;
+                e1.noOfWorkingHours = numberOfWorkingHours;
+                e1.netSalary = e1.salaryPerHour * e1.noOfWorkingHours;
+
+                Console.WriteLine("\nEmployee Details:");
+                Console.WriteLine($"Employee Id: {e1.employeeId} | Employee Name: {e1.employeeName} | Salary Per Hour: {e1.salaryPerHour} | Number of Working Days: {e1.noOfWorkingHours} | Net Salary: {e1.netSalary} | Organization Name: {Employee.organizationName} | Type of Employee: {Employee.typeOfEmployee} | Department Name: {e1.departmentName} ");
+
+                Console.Write("Do you want to add employee? (yes/no): ");
+                string choice = Console.ReadLine().ToLower();
+
+                if(choice != "yes")
+                {
+                    break;
+                }
+
+            }
 
             Console.ReadKey();
         }

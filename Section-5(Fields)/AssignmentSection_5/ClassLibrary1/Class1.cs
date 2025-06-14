@@ -4,15 +4,17 @@ public class Employee
 {
     public int employeeId;
     public string employeeName;
-    public string employeeDesignation;
-    public double employeeSalary;
+    public double salaryPerHour;
+    public int noOfWorkingHours;
+    public double netSalary;
 
-    public void showEmployeeDetails()
+    public static string organizationName;
+    public const string typeOfEmployee = "Contract Based";
+    public readonly string departmentName;
+
+    public Employee()
     {
-        Console.WriteLine("Employee ID: " + employeeId);
-        Console.WriteLine("Employee Name: " + employeeName);
-        Console.WriteLine("Employee Designation: " + employeeDesignation);
-        Console.WriteLine("Employee Salary: " + employeeSalary);
+        departmentName = "Finance Department";
     }
 
 }

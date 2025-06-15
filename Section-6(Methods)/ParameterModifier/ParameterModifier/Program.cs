@@ -32,6 +32,14 @@ namespace ParameterModifier
             return a + b; // returns 30
         }
 
+        // Example of in Modifier
+        static int InModifier(in int a, in int b)
+        {
+            // a = 10; // This will give an error because 'a' is read-only
+            // b = 20; // This will give an error because 'b' is read-only
+            return a + b; // returns the sum of a and b
+        }
+
 
         static void Main(string[] args)
         {
@@ -64,6 +72,11 @@ namespace ParameterModifier
                         => What out Modifier says is: “I want to give you a reference. Use it however you want inside the method, and the changes will be reflected in the original argument, but I will not give you the original value.”
 
                     - in :
+                        => The in modifier indicates that an argument is passed by reference, but it is read-only.
+                        => The in modifier is used to pass arguments by reference, but the method cannot modify the value of the parameter.
+                        => The argument that will be passed should be a variable and we should be prefix the keyword in.
+                        => Before passing the variable as the argument we should intialize it.
+                        => What in Modifier says is: “I want to give you a reference. Use it however you want inside the method, but don’t change the original argument value.”
 
                     - params
             */
@@ -91,6 +104,14 @@ namespace ParameterModifier
             // int outResult = OutModifier(out int outA, out int outB); // This is also valid.
 
             Console.WriteLine($"Out Modifier Output: {outResult}"); // Output: 30
+
+            Console.WriteLine();
+
+            // 4. Example of in Modifier
+            int inA = 5, inB = 10;
+            int inResult = InModifier(in inA, in inB);
+            // Note: We cannot change the value of inA or inB inside the InModifier method.
+            Console.WriteLine($"In Modifier Output: {inResult}"); // Output: 15
 
 
 

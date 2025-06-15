@@ -78,7 +78,10 @@ namespace ParameterModifier
                         => Before passing the variable as the argument we should intialize it.
                         => What in Modifier says is: “I want to give you a reference. Use it however you want inside the method, but don’t change the original argument value.”
 
-                    - params
+                    - params :
+                        => The params modifier allows us to take multiple arguments of the same type by declaring a parameter as an array.
+                        => We can use the index to access the values of the array.
+             
             */
 
             // 1. Example of Default Modifier
@@ -113,8 +116,24 @@ namespace ParameterModifier
             // Note: We cannot change the value of inA or inB inside the InModifier method.
             Console.WriteLine($"In Modifier Output: {inResult}"); // Output: 15
 
+            Console.WriteLine();
 
+            // 5. Example of params Modifier
+            Student s = new Student();
+            s.DisplaySubjects("Math", "Science", "English", "History", "Kannada");
+        }
+    }
 
+    // Example for params Modifier
+    public class Student
+    {
+        public void DisplaySubjects(params string[] subjects)
+        {
+            Console.WriteLine("Subjects...");
+            for(int i = 0; i < subjects.Length; i++)
+            {
+                Console.WriteLine($"Subject-{i+1}: {subjects[i]}");
+            }
         }
     }
 }

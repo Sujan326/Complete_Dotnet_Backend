@@ -24,6 +24,15 @@ namespace ParameterModifier
             return a + b; // returns 30
         }
 
+        // Example of out Modifier
+        static int OutModifier(out int a, out int b)
+        {
+            a = 10; // The value of a is assigned to the argument variable
+            b = 20; // The value of b is assigned to the argument variable
+            return a + b; // returns 30
+        }
+
+
         static void Main(string[] args)
         {
             /*
@@ -46,8 +55,16 @@ namespace ParameterModifier
 
 
                     - out :
+                        => In the out modifier the argument value will not be given to the parameter. The parameter value will be automatically assigned to the argument variable.
+                        => The out modifier is used to pass arguments by reference.
+                        => The flow of this modifier is from Method defination to Method Caller.
+                        => The out modifier is used to return multiple values from a method.
+                        => The argument that will be passed should be a variable and we should be prefix the keyword out.
+                        => Before passing the variable as the argument we should not intialize it.
+                        => What out Modifier says is: “I want to give you a reference. Use it however you want inside the method, and the changes will be reflected in the original argument, but I will not give you the original value.”
 
-                    - in
+                    - in :
+
                     - params
             */
 
@@ -55,7 +72,7 @@ namespace ParameterModifier
             // This is nothing but pass-by-value, (Here the original argument value is not changed because this is stored in the stack of main method and the DefautModifier method has its own stack and the values are copied to the stack of DefaultModifier method. So the original value of a and b will not be changed.)
             int a = 5, b = 10;
             int result = DefaultModifier(a, b); 
-            Console.WriteLine($"Default Modifier Output: {result} ");
+            Console.WriteLine($"Default Modifier Output: {result} "); // Output: 30
 
             Console.WriteLine();
 
@@ -63,6 +80,18 @@ namespace ParameterModifier
             int x = 5, y = 10;
             int refResult = RefModifier(ref x, ref y);
             Console.WriteLine($"Ref Modifier Output: {refResult}"); // Output: 30
+
+            Console.WriteLine();
+
+            // 3. Example of out Modifier
+            int outA, outB; // No need to initialize these variables
+            int outResult = OutModifier(out outA, out outB);
+
+            // In the C# version 7 after, we can directly declare the out variables in the method call itself.
+            // int outResult = OutModifier(out int outA, out int outB); // This is also valid.
+
+            Console.WriteLine($"Out Modifier Output: {outResult}"); // Output: 30
+
 
 
         }

@@ -21,6 +21,8 @@ namespace LocalFunctions
 
             Student s = new Student();
             s.DisplayMarks(80, 40, 60);
+
+            Console.ReadKey();
         }
     }
 
@@ -28,16 +30,16 @@ namespace LocalFunctions
     {
         public void DisplayMarks(int marks1, int marks2, int marks3)
         {
-            double averageMarks = CalculateAverageMarks(marks1, marks2, marks3);
+            double averageMarks = CalculateAverageMarks();
             Console.WriteLine($"Marks 1: {marks1}");
             Console.WriteLine($"Marks 2: {marks2}");
             Console.WriteLine($"Marks 3: {marks3}");
             Console.WriteLine($"Average Marks: {averageMarks}");
 
             // Create Local Function
-            double CalculateAverageMarks(int m1, int m2, int m3)
+            double CalculateAverageMarks()
             {
-                return (m1 + m2 + m3) / 3.0;
+                return (marks1 + marks2 + marks3) / 3.0; // Here we can directly access the parameters or variables that is the part of the containing method.
             }
         }
     }

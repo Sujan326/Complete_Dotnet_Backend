@@ -32,6 +32,13 @@ namespace ParameterModifier
             return a + b; // returns 30
         }
 
+        // Example of out Modifier (Multiple Values)
+        static void OutModifierMultipleValues(int a, int b, out int sum, out double product)
+        {
+            sum = a + b; // sum will be 30
+            product = a * b; // product will be 200
+        }
+
         // Example of in Modifier
         static int InModifier(in int a, in int b)
         {
@@ -102,11 +109,17 @@ namespace ParameterModifier
             // 3. Example of out Modifier
             int outA, outB; // No need to initialize these variables
             int outResult = OutModifier(out outA, out outB);
+            Console.WriteLine($"Out Modifier Output: {outResult}"); // Output: 30
 
             // In the C# version 7 after, we can directly declare the out variables in the method call itself.
             // int outResult = OutModifier(out int outA, out int outB); // This is also valid.
+            Console.WriteLine();
 
-            Console.WriteLine($"Out Modifier Output: {outResult}"); // Output: 30
+            // 3.1 Example of out Modifier with multiple values
+            int num1 = 5, num2 = 10, sum;
+            double product;
+            OutModifierMultipleValues(num1, num2, out sum, out product);
+            Console.WriteLine($"Sum: {sum}, Product: {product}"); // Output: Sum: 15, Product: 50
 
             Console.WriteLine();
 
@@ -121,6 +134,8 @@ namespace ParameterModifier
             // 5. Example of params Modifier
             Student s = new Student();
             s.DisplaySubjects("Math", "Science", "English", "History", "Kannada");
+
+            Console.ReadKey();
         }
     }
 

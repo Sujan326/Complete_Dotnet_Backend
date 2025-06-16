@@ -17,7 +17,7 @@ namespace AccessModifiers
                     1. public: The member is accessible from any other code.
                     2. private: The member is accessible only within its own class.
                     3. private protected: The member is accessible within its own class and by derived classes, but only within the same assembly/project.
-                    4. protected: The member is accessible within its own class and by derived classes.
+                    4. protected: The member is accessible within its own class and by derived classes and also in the derived class of other assembly/project.
                     5. internal: The member is accessible only within its own assembly/project.
                     6. protected internal: The member is accessible within its own assembly/project and by derived classes.
                 

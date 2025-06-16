@@ -21,7 +21,7 @@ namespace Introduction
                 -> Any physical object is called as Object
                 -> Object is a instace (example) of class.
                 -> Object stores the set of fields (details about the object)
-                -> All the objects are stored in the HEAL Memory
+                -> All the objects are stored in the HEAP Memory
 
               WHAT IS CLASS ?
                 -> Class is a model of object.

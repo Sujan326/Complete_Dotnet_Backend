@@ -14,7 +14,7 @@ namespace Introduction
               WHAT IS OOP ?
                 -> Object-Oriented Programming (OOP) is a programming paradigm that one of the most popular for building the scalable applications.
                 -> OOP is used in most of the popular programming languages like C#, Java, Python, etc.
-                -> Goal of OOP is to group up some data and operations as a single unit called "Object".
+                -> Goal of OOP is to group up some data and operations as a single unit called "Class".
 
               WHAT IS OBJECT ?
                 -> Object is a small unit (entity) that represents a real-world person or thing.
